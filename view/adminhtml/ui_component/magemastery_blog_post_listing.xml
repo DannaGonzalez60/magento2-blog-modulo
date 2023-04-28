@@ -2,7 +2,7 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">magemastery_blog_post_listing.magemastery_blog_post_listing_listing_data_source</item>
+            <item name="provider" xsi:type="string">magemastery_blog_post_listing.magemastery_blog_post_listing_data_source</item>
         </item>
     </argument>
     <settings>
@@ -10,10 +10,10 @@
             <button name="add">
                 <url path="*/*/new"/>
                 <class>primary</class>
-                <label translate="true">Add New Page</label>
+                <label translate="true">Add New Post</label>
             </button>
         </buttons>
-        <spinner>magemastery_blog_post_columns</spinner>
+        <spinner>magemastery_blog_post_listing_columns</spinner>
         <deps>
             <dep>magemastery_blog_post_listing.magemastery_blog_post_listing_data_source</dep>
         </deps>
@@ -56,7 +56,7 @@
                     </filters>
                 </templates>
             </settings>
-
+        </filters>
         <massaction name="listing_massaction">
             <action name="delete">
                 <settings>
@@ -73,7 +73,7 @@
                 <settings>
                     <callback>
                         <target>editSelected</target>
-                        <provider>magemastery_blog_post_listing.magemastery_blog_post_listing.magemastery_blog_post_columns_editor</provider>
+                        <provider>magemastery_blog_post_listing.magemastery_blog_post_listing.magemastery_blog_post_listing_columns_editor</provider>
                     </callback>
                     <type>edit</type>
                     <label translate="true">Edit</label>
@@ -82,7 +82,7 @@
         </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="magemastery_blog_post_columns">
+    <columns name="magemastery_blog_post_listing_columns">
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
@@ -91,11 +91,11 @@
                 </param>
                 <param name="indexField" xsi:type="string">post_id</param>
                 <param name="enabled" xsi:type="boolean">true</param>
-                <param name="selectProvider" xsi:type="string">magemastery_blog_post_listing.magemastery_blog_post_listing.magemastery_blog_post_columns.ids</param>
+                <param name="selectProvider" xsi:type="string">magemastery_blog_post_listing.magemastery_blog_post_listing.magemastery_blog_post_listing_columns.ids</param>
             </editorConfig>
             <childDefaults>
                 <param name="fieldAction" xsi:type="array">
-                    <item name="provider" xsi:type="string">magemastery_blog_post_listing.magemastery_blog_post_listing.magemastery_blog_post_columns_editor</item>
+                    <item name="provider" xsi:type="string">magemastery_blog_post_listing.magemastery_blog_post_listing.magemastery_blog_post_listing_columns_editor</item>
                     <item name="target" xsi:type="string">startEdit</item>
                     <item name="params" xsi:type="array">
                         <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
