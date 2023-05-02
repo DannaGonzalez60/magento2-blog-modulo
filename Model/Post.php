@@ -8,7 +8,7 @@ use MageMastery\Blog\Model\ResourceModel\Post as PostResource;
 
 class Post extends AbstractModel{
 
-    protected function __construct()
+    protected function _construct()
     {
         $this->_init(resourceModel:PostResource::class);
     }

@@ -11,7 +11,8 @@ use Magento\Framework\View\Result\Page;
 
 class Edit extends Action implements HttpGetActionInterface{
 
-   public function execute(): Page{
+   public function execute(): Page
+   {
 
     $pageResult = $this->createPageResult();
     $title = $pageResult->getConfig()->getTitle();
